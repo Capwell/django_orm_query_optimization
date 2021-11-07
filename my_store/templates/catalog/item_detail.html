@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>{{ item.name }}</h3>
+теги: 
+{% for tag in item.tags.all %}
+  {{ tag.name }} 
+{% endfor %}
+<p>{{ item.category.name }}</p>
+<p>{{ item.text }}</p>  
+{% endblock %}
+

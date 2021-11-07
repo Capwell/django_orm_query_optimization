@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <ul>
+    {% for item in items %}
+      <li>        
+        <h4>{{ item.name }}</h4>
+        {% comment %} теги: 
+        {% for tag in item.tags.all %}
+          {{ tag.name }} 
+        {% endfor %} {% endcomment %}
+        <p>{{ item.category.name }}</p>
+        <a href="{{ item.get_absolute_url }}">подробнее</a>
+        {% comment %} <p>{{ item.text }}</p>   {% endcomment %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
